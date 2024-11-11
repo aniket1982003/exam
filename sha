@@ -1,0 +1,18 @@
+const crypto = require('crypto');
+
+function findHashPrefix(prefix) {
+  let input = '';
+  let counter = 0;
+  let hash = '';
+  
+  while (!hash.startsWith(prefix)) {
+    input = 'input' + counter;
+    hash = crypto.createHash('sha256').update(input).digest('hex');
+    counter++;
+  }
+
+  return { input, hash };
+}
+
+const result = findHashPrefix('00000');
+console.log(result.input, result.hash);
