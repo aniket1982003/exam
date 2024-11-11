@@ -1,0 +1,17 @@
+function timeToSum(n) {
+    const startTime = performance.now();  // Start timing
+
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+
+    const endTime = performance.now();    // End timing
+    const timeTaken = (endTime - startTime) / 1000; // Convert milliseconds to seconds
+
+    console.log(`Time taken to calculate sum from 1 to ${n}: ${timeTaken} seconds`);
+    return sum;
+}
+
+// Example usage:
+timeToSum(1000000); // Time to sum numbers from 1 to 1,000,000
