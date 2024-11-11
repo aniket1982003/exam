@@ -1,0 +1,16 @@
+function countVowels(str) {
+    const vowels = 'aeiouAEIOU';  // Vowel characters
+    let count = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// Example usage:
+console.log(countVowels("Hello World")); // 3 (e, o, o)
+console.log(countVowels("Javascript"));  // 3 (a, i, a)
